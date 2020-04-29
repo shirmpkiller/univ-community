@@ -9,7 +9,7 @@ import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import FreeBoard from "./views/FreeBoard/FreeBoard"
 import FreeRegister from "./views/FreeRegister/FreeRegister"
-
+import FreeDetail from "./views/FreeDetail/FreeDetail"
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -25,6 +25,7 @@ function App() {
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/freeboard" component={Auth(FreeBoard, null)} />
           <Route exact path="/freeregister" component={Auth(FreeRegister, null)} />
+          <Route exact path="/post/:postId" component={Auth(FreeDetail, null)} />
         </Switch>
       </div>
       <Footer />

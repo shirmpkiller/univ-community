@@ -26,9 +26,11 @@ function FreeBoard() {
          <div >
             <Row>
                 <Col span={16} offset={4}>
+                <a href={`/post/${post._id}`}>
                     <Card title={post.freetitle} extra={<a href="#">More</a>} /*style={{background: '#ececec'}}*/ /*bordered={false}*/>
                        {post.freecontent}
                     </Card>
+                    </a>
                 </Col>
             </Row>
         </div>

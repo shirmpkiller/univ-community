@@ -28,4 +28,17 @@ router.get("/getposts", (req, res) => {
         })
 
 })
+
+router.post("/getpost", (req, res) => {
+
+    Post.findOne({"_id" : req.body.postId})
+        .populate('writer')
+        .exec((err, post) => {
+            if(err) return res.status(400).send(err);
+           return res.status(200).json({ success: true, post})
+        })
+
+})
+
+
 module.exports = router;
